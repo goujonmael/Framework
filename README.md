@@ -20,4 +20,4 @@ Configurations and scripts for my Framework computer
 - RAM usage
 - Battery % with on-click toggle to limit to 60% / 100%
 - Current time
-![image](https://github.com/user-attachments/assets/3f2eec4d-5c8b-4cb5-97dc-43266017ffc1)
+  ![image](https://github.com/user-attachments/assets/a3b6eb71-6407-4c19-817d-e109573055ff)
