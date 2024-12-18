@@ -1,7 +1,5 @@
 # Framework
-
-<img align="left" object-fit="cover" width="300" height="100" src="https://frame.work/assets/family/diy_laptop-f402ff777de39ff72aa9eae12c2fa28733e885074731c53e9530ff93fb6a399c.jpg">
-Configurations and scripts for my Framework computer
+<img align="right" width="200" height="183" src="[https://cloud.githubusercontent.com/assets/532272/21507867/3376e9fe-cc4a-11e6-9350-7ec4f680da36.gif](https://frame.work/assets/family/diy_laptop-f402ff777de39ff72aa9eae12c2fa28733e885074731c53e9530ff93fb6a399c.jpg)">Configurations and scripts for my Framework computer
 
 ## Scripts :
 ### Battery Management
