@@ -1,7 +1,10 @@
 # Framework
+
+<img align="left" width="100" height="100" src="https://picsum.photos/100/100](https://github.com/user-attachments/assets/2c9f7934-8c18-475c-bb9c-1ac0d9b273ef">
+Configurations and scripts for my Framework computer
+
 ![image](https://github.com/user-attachments/assets/2c9f7934-8c18-475c-bb9c-1ac0d9b273ef)
 
-Configurations and scripts for my Framework computer
 ## Scripts :
 ### Battery Management
 - Limit the charge of the battery (%) and notify the user
