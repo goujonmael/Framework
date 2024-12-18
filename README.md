@@ -1,10 +1,8 @@
 # Framework
 <img align="right" width="200" height="183" src="https://frame.work/assets/family/diy_laptop-f402ff777de39ff72aa9eae12c2fa28733e885074731c53e9530ff93fb6a399c.jpg">
-#
-#
+<br/><br/>
 Configurations and scripts for my Framework computer
-#
-#
+<br/>
 
 ## Scripts :
 ### Battery Management
