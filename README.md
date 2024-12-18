@@ -19,9 +19,11 @@ Configurations and scripts for my Framework computer
 - start waybar, discord & kdeconnect-indicator at startup
 ### Waybar
 - Sound volume
-- Connexion name and strenght
+- Connexion strenght
 - CPU usage
+- CPU temp
 - RAM usage
 - Battery % with on-click toggle to limit to 60% / 100%
 - Current time
-  ![image](https://github.com/user-attachments/assets/a3b6eb71-6407-4c19-817d-e109573055ff)
+  ![Waybar](https://github.com/user-attachments/assets/75bd80d9-dca4-49c6-af3d-8147b2eedd9d)
+
