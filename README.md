@@ -13,3 +13,11 @@ Configurations and scripts for my Framework computer
 - fileManager = dolphin
 - menu = wofi
 - start waybar, discord & kdeconnect-indicator at startup
+### Waybar
+- Sound volume
+- Connexion name and strenght
+- CPU usage
+- RAM usage
+- Battery % with on-click toggle to limit to 60% / 100%
+- Current time
+![image](https://github.com/user-attachments/assets/3f2eec4d-5c8b-4cb5-97dc-43266017ffc1)
