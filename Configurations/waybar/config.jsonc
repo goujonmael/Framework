@@ -54,9 +54,10 @@
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "({signalStrength}%)",
+        "format-wifi": "(WiFi {signalStrength}%) {bandwidthDownBits}⬇ {bandwidthUpBits}⬆",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-disconnected": "Disconnected ⚠",
+        "interval": 1
     },
     "pulseaudio": {
         //"scroll-step": 1,
