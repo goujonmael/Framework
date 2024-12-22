@@ -22,7 +22,7 @@ Configurations and scripts for my Framework computer
   ![image](https://github.com/user-attachments/assets/cd83c8e0-d631-4bf0-96ce-45aa1814ac94)
 #### Left-side :
 - Current desktop
-- Network connexion
+- Network connexion => on-click open nmtui
 #### Middle-side :
 - CPU : temp/ usage / freq
 - Power profile switch
@@ -31,6 +31,6 @@ Configurations and scripts for my Framework computer
 #### Right-side :
 - Screen brightness %
 - Sound volume %
-- Battery % with on-click toggle to limit to 60% / 100% charge
+- Battery % => on-click toggle to limit to 60% / 100% charge
 - Time
 
