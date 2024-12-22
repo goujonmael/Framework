@@ -18,12 +18,18 @@ Configurations and scripts for my Framework computer
 - menu = wofi
 - start waybar, discord & kdeconnect-indicator at startup
 ### Waybar
-- Sound volume
-- Connexion strenght
-- CPU usage
-- CPU temp
-- RAM usage
-- Battery % with on-click toggle to limit to 60% / 100%
-- Current time
-  ![Waybar](https://github.com/user-attachments/assets/75bd80d9-dca4-49c6-af3d-8147b2eedd9d)
+#### Left-side :
+- Current desktop
+- Network connexion
+#### Middle-side :
+- CPU : temp/ usage / freq
+- Power profile switch
+- RAM : usage
+- GPU : Core & Vram usages / temp
+#### Right-side :
+- Screen brightness %
+- Sound volume %
+- Battery % with on-click toggle to limit to 60% / 100% charge
+- Time
+  ![image](https://github.com/user-attachments/assets/cd83c8e0-d631-4bf0-96ce-45aa1814ac94)
 
