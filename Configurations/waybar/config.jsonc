@@ -39,7 +39,8 @@
         "format-wifi": "(WiFi {signalStrength}%) {bandwidthDownBits}⬇ {bandwidthUpBits}⬆",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
-        "interval": 1
+        "interval": 1,
+        "on-click": "konsole -e nmtui"
     },
     "pulseaudio": {
         //"scroll-step": 1,
