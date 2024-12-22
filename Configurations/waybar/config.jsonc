@@ -4,28 +4,9 @@
     "height": 24, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-center": ["temperature", "cpu", "memory", "sway/workspaces", "sway/mode", "custom/spotify"],
-    "modules-left": ["network"],
-    "modules-right": ["pulseaudio", "battery", "tray", "clock"],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1:web": "",
-            "2:code": "",
-            "3:term": "",
-            "4:work": "",
-            "5:music": "",
-            "6:docs": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+    "modules-center": ["temperature", "cpu", "memory", "sway/workspaces", "sway/mode", "power-profiles-daemon", "custom/gpu-usage", "custom/gpu-vram", "custom/gpu-temp"],
+    "modules-left": ["hyprland/workspaces", "network"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "tray", "clock"],
     "tray": {
         // "icon-size": 21,
         "spacing": 15
@@ -34,10 +15,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "{usage}% {avg_frequency} ",
+    "interval": 1
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "battery": {
         "bat": "BAT1",
@@ -79,7 +61,7 @@
         "format": " {}",
         "max-length": 40,
         "interval": 30, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec": "brightnessctl g",
         "exec-if": "pgrep spotify"
     },
     "temperature": {
@@ -87,8 +69,60 @@
         // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
         // "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C ",
+        "format": "{temperatureC}°C {icon}",
+        "interval": 1,
+        "format-icons": ["", "", "", "", ""],
+        "thresholds": [45, 55, 65]
+    },
+    "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+                "active": "",
+                "default": ""
+        },
+    },
+    "hyprland/window": {
+    "format": "👉 {}",
+    "rewrite": {
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    },
+    "power-profiles-daemon": {
+      "format": " {icon} ",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [""]
+    },
+    "custom/gpu-usage": {
+      "exec": "cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent",
+      "format": " | GPU:  {}% 󰢮 ",
+      "return-type": "",
+      "interval": 1
+    },
+    "custom/gpu-vram": {
+        "exec": "echo \"scale=1; ($(cat /sys/class/hwmon/hwmon4/device/mem_info_vram_used) / $(cat /sys/class/hwmon/hwmon4/device/mem_info_vram_total)) * 100\" | bc ",
+        "format": " {}%  ",
+        "return-type": "",
         "interval": 1
-    }
-
+    },
+    "custom/gpu-temp": {
+        "exec": "echo $(( $(cat /sys/class/hwmon/hwmon4/temp1_input) / 1000 ))",
+        "format": "{}°C {icon} ",
+        "interval": 1,
+        "format-icons": [" ", " ", " ", " ", " "],
+        "thresholds": [45, 55, 65],
+        "return-type": "",
+    },
 }
