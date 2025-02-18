@@ -34,3 +34,10 @@ Configurations and scripts for my Framework computer
 - Battery % => on-click toggle to limit to 60% / 100% charge
 - Time
 
+## Patch Scroll Speed
+When scrolling on trackpad under wayland I experience a scroll factor too high.
+### libinput-config
+Install and configure :
+![libinput-config](https://gitlab.com/warningnonpotablewater/libinput-config)
+Create a config file under `/etc/libinput.conf`:
+‘scroll-factor=.2’
