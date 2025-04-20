@@ -11,7 +11,6 @@ Configurations and scripts for my Framework computer
 
 ## Configurations :
 ### Hyprland
-![image](https://github.com/user-attachments/assets/8d6b11e4-c442-4825-bf2d-61db8e553b45)
 - basic white borders for current window
 - french keyboard
 - 2 monitors (laptop 2880x1920@120.00Hz & external 2560x1440@120.00Hz)
