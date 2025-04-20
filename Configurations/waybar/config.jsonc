@@ -4,9 +4,9 @@
     "height": 24, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-center": ["temperature", "cpu", "memory", "sway/workspaces", "sway/mode", "power-profiles-daemon", "custom/gpu-usage", "custom/gpu-vram", "custom/gpu-temp"],
+    "modules-center": ["power-profiles-daemon", "temperature", "cpu", "memory", "custom/gpu-usage", "custom/gpu-vram", "custom/gpu-temp"],
     "modules-left": ["hyprland/workspaces", "network"],
-    "modules-right": ["backlight", "pulseaudio", "battery", "tray", "clock"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "custom/power", "custom/time_to_empty", "tray", "clock"],
     "tray": {
         // "icon-size": 21,
         "spacing": 15
@@ -15,11 +15,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% {avg_frequency} ",
+        "format": "{usage}% {avg_frequency}GHz",
     "interval": 1
     },
     "memory": {
-        "format": "{}% "
+        "format": "| RAM : {}%"
     },
     "battery": {
         "bat": "BAT1",
@@ -28,11 +28,20 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
-        "on-click": "bash /home/mig/scripts/batteryConservation.sh"
+        "on-click": "bash /home/gogo/scripts/batteryConservation.sh"
+    },
+    "custom/power": {
+        "exec": "/home/gogo/scripts/power_consumption.sh",
+        "interval": 1,
+        "format": "{} "
+    },
+    "custom/time_to_empty": {
+        "exec": "/home/gogo/scripts/time_to_empty.sh",
+        "interval": 1
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -67,13 +76,11 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+        // "hwmon-path": ["/sys/class/hwmon/hwmon13/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
         // "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C {icon}",
-        "interval": 1,
-        "format-icons": ["", "", "", "", ""],
-        "thresholds": [45, 55, 65]
+        "format": " CPU : {temperatureC}°C",
+        "interval": 1
     },
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
@@ -107,23 +114,21 @@
         "format-icons": [""]
     },
     "custom/gpu-usage": {
-      "exec": "cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent",
-      "format": " | GPU:  {}% 󰢮 ",
+      "exec": "cat /sys/class/hwmon/hwmon13/device/gpu_busy_percent",
+      "format": " | GPU:  {}% ",
       "return-type": "",
       "interval": 1
     },
     "custom/gpu-vram": {
-        "exec": "echo \"scale=1; ($(cat /sys/class/hwmon/hwmon4/device/mem_info_vram_used) / $(cat /sys/class/hwmon/hwmon4/device/mem_info_vram_total)) * 100\" | bc ",
-        "format": " {}%  ",
+        "exec": "echo \"scale=1; ($(cat /sys/class/hwmon/hwmon13/device/mem_info_vram_used) / $(cat /sys/class/hwmon/hwmon13/device/mem_info_vram_total)) * 100\" | bc ",
+        "format": " {}%",
         "return-type": "",
         "interval": 1
     },
     "custom/gpu-temp": {
-        "exec": "echo $(( $(cat /sys/class/hwmon/hwmon4/temp1_input) / 1000 ))",
-        "format": "{}°C {icon} ",
+        "exec": "echo $(( $(cat /sys/class/hwmon/hwmon13/temp1_input) / 1000 ))",
+        "format": " {}°C",
         "interval": 1,
-        "format-icons": [" ", " ", " ", " ", " "],
-        "thresholds": [45, 55, 65],
         "return-type": "",
     },
 }
