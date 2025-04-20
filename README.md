@@ -19,7 +19,7 @@ Configurations and scripts for my Framework computer
 - menu = wofi
 - start waybar, discord & kdeconnect-indicator at startup
 ### Waybar
-  ![image](https://github.com/user-attachments/assets/cd83c8e0-d631-4bf0-96ce-45aa1814ac94)
+![image](https://github.com/user-attachments/assets/c96d0e31-8b3d-45fa-91f9-ed593a4255af)
 #### Left-side :
 - Current desktop
 - Network connexion => on-click open nmtui
