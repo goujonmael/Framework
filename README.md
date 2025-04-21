@@ -8,6 +8,10 @@ Configurations and scripts for my Framework computer
 ### Battery Management
 - Limit the charge of the battery (%) and notify the user
 ![60percent](https://github.com/user-attachments/assets/8daa319e-644a-4593-a582-7bce5185ccc9)
+#### Requirements
+We should allow the current user to interact with the "framework_tool" command without password :
+`sudo visudo`
+`user_name ALL=(ALL) NOPASSWD: /usr/bin/framework_tool`
 
 ## Configurations :
 ### Hyprland
