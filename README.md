@@ -44,3 +44,27 @@ Install and configure :
 ![libinput-config](https://gitlab.com/warningnonpotablewater/libinput-config)
 Create a config file under `/etc/libinput.conf`:
 ‘scroll-factor=.2’
+### For Fedora / Bluefin 
+https://jackwilsdon.me/libinput-config-silverblue/
+Download and build libinput-config:
+```bash
+    $ toolbox enter
+    ⬢ $ sudo dnf install -y gcc libinput-devel meson
+    ⬢ $ git clone https://gitlab.com/warningnonpotablewater/libinput-config.git
+    ⬢ $ cd libinput-config
+    ⬢ $ meson build
+    ⬢ $ ninja -C build
+    ⬢ $ mkdir -p ~/.local/lib64
+    ⬢ $ cp build/libinput-config.so ~/.local/lib64
+    ⬢ $ exit
+```
+Add a unit override to load libinput-config (note this step is specific to Gnome):
+```bash
+    $ mkdir -p ~/.config/systemd/user/org.gnome.Shell@wayland.service.d/
+    $ cat <<EOF >> ~/.config/systemd/user/org.gnome.Shell@wayland.service.d/libinput-config.conf
+    [Service]
+    Environment="LD_PRELOAD=%h/.local/lib64/libinput-config.so"
+    EOF
+```
+Edit /etc/libinput.conf and set your desired settings (see How to use).
+Log out and back in again.
