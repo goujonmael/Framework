@@ -41,7 +41,7 @@ We should allow the current user to interact with the "framework_tool" command w
 When scrolling on trackpad under wayland I experience a scroll factor too high.
 ### libinput-config
 Install and configure :
-![libinput-config](https://gitlab.com/warningnonpotablewater/libinput-config)
+https://gitlab.com/warningnonpotablewater/libinput-config
 Create a config file under `/etc/libinput.conf`:
 ‘scroll-factor=.2’
 ### For Fedora / Bluefin 
